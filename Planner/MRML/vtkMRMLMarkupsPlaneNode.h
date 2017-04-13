@@ -19,7 +19,7 @@
 #define __vtkMRMLMarkupsPlaneNode_h
 
 // MRML includes
-#include "vtkMRMLMarkupsNode.h"
+#include <vtkMRMLMarkupsNode.h>
 
 // Markups includes
 #include "vtkSlicerPlannerModuleMRMLExport.h"
@@ -77,6 +77,12 @@ public:
   vtkMRMLMarkupsDisplayNode *GetMarkupsDisplayNode();
 
   // Wrapping some of the generic markup methods
+  enum
+    {
+    ORIGIN_INDEX = 0,
+    P1_INDEX,
+    P2_INDEX
+    } PlanePointIndexes;
 
   /// Add a new plane return the plane index
   int AddPlane(double ox, double oy, double oz,
